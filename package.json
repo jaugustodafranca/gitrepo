@@ -9,6 +9,10 @@
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
+  "engines": {
+    "node": ">=14.17.3",
+    "yarn": ">=1.22.15"
+  },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.9",
     "@react-native-community/async-storage": "^1.12.1",
