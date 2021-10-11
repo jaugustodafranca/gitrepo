@@ -13,7 +13,18 @@ const MODULE_RESOLVER = [
 
 module.exports = {
   presets: ['module:metro-react-native-babel-preset'],
-  plugins: [MODULE_RESOLVER],
+  plugins: [
+    MODULE_RESOLVER,
+    [
+      'module:react-native-dotenv',
+      {
+        moduleName: '@env',
+        path: '.env',
+        safe: true,
+        allowUndefined: true,
+      },
+    ],
+  ],
   env: {
     production: {
       plugins: ['transform-remove-console'],

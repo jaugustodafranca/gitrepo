@@ -1,7 +1,14 @@
 import React from 'react'
 import { Dialog, Portal, Button, Paragraph } from 'react-native-paper'
 
-const DialogError = ({ visible, handleConfirm, title, message }) => {
+interface DialogErrorProps {
+  visible: boolean
+  handleConfirm: () => void
+  title: string
+  message: string
+}
+
+const DialogError = ({ visible, handleConfirm, title, message }: DialogErrorProps) => {
   return (
     <Portal>
       <Dialog visible={visible} onDismiss={handleConfirm}>

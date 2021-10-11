@@ -8,6 +8,7 @@ export default StyleSheet.create({
   container: {
     alignItems: 'center',
     flexDirection: 'row',
+    marginBottom: 5,
   },
   chipText: {
     fontSize: 14,

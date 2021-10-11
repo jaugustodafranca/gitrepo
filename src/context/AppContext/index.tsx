@@ -21,18 +21,18 @@ type ContextType = {
   setData: React.Dispatch<React.SetStateAction<GlobalState>>
 }
 
-const INITIAL_PROPS = {
+const INITIAL_PROPS: GlobalState = {
   loadedRepositories: [],
   favorites: [],
 }
 
 export const AppContext = createContext<ContextType>({ data: INITIAL_PROPS, setData: () => {} })
 
-const AppContextProvider = ({ children }) => {
+const AppContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [data, setData] = useState<GlobalState>(INITIAL_PROPS)
 
   const loadData = async () => {
-    const state: cacheData = (await AsyncStorage.getItem('APP::STATE')) || '{}'
+    const state: cacheData = (await AsyncStorage.getItem('APP::STATE')) || '[]'
     setData((prevState: GlobalState) => ({ ...prevState, favorites: JSON.parse(state) }))
   }
 

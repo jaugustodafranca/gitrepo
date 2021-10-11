@@ -22,7 +22,6 @@ const Header = () => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
   const { data, setData } = useAppContext()
-  console.log('data', data)
   const navigation = useNavigation<StackNavigationProp<RootStackParamList, 'Search Repositories'>>()
 
   const toggleErrorDialog = () => {
